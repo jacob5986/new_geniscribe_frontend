@@ -1,12 +1,12 @@
-import React from 'react';
-import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
-import { useTranslation } from 'next-i18next';
-import { useText } from '~/theme/common';
-import useStyles from './counter-style';
+import React from "react";
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
+import { useTranslation } from "next-i18next";
+import { useText } from "~/theme/common";
+import useStyles from "./counter-style";
 
 function Counter() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const { classes, cx } = useStyles();
   const { classes: text } = useText();
   return (
@@ -16,11 +16,9 @@ function Counter() {
           <Grid md={4} item>
             <div className={classes.counterItem}>
               <div className={classes.text}>
-                <h3 className={cx(classes.primaryLine, text.title)}>
-                  +200
-                </h3>
+                <h3 className={cx(classes.primaryLine, text.title)}>+200</h3>
                 <p className={text.subtitle}>
-                  {t('marketing-landing.about_employee')}
+                  {t("marketing-landing.about_users")}
                 </p>
               </div>
             </div>
@@ -28,11 +26,9 @@ function Counter() {
           <Grid md={4} item>
             <div className={classes.counterItem}>
               <div className={classes.text}>
-                <h3 className={cx(classes.secondaryLine, text.title)}>
-                  +500
-                </h3>
+                <h3 className={cx(classes.secondaryLine, text.title)}>+500</h3>
                 <p className={text.subtitle}>
-                  {t('marketing-landing.about_projects')}
+                  {t("marketing-landing.about_books")}
                 </p>
               </div>
             </div>
@@ -40,11 +36,9 @@ function Counter() {
           <Grid md={4} item>
             <div className={classes.counterItem}>
               <div className={classes.text}>
-                <h3 className={cx(classes.accentLine, text.title)}>
-                  +300
-                </h3>
+                <h3 className={cx(classes.accentLine, text.title)}>+300</h3>
                 <p className={text.subtitle}>
-                  {t('marketing-landing.about_client')}
+                  {t("marketing-landing.about_review")}
                 </p>
               </div>
             </div>
@@ -55,8 +49,6 @@ function Counter() {
   );
 }
 
-Counter.propTypes = {
-
-};
+Counter.propTypes = {};
 
 export default Counter;

@@ -1,22 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
-import Link from '@mui/material/Link';
-import IconButton from '@mui/material/IconButton';
-import { useTranslation } from 'next-i18next';
-import logo from '~/public/images/logo-marketing.svg';
-import brand from '~/public/text/brand';
-import img from '~/public/images/imgAPI';
-import Decoration from './Decoration';
-import SelectLang from '../LangSwitch/Select';
-import useStyles from './blog-style';
+import React from "react";
+import PropTypes from "prop-types";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import ButtonBase from "@mui/material/ButtonBase";
+import Link from "@mui/material/Link";
+import IconButton from "@mui/material/IconButton";
+import { useTranslation } from "next-i18next";
+import logo from "~/public/images/logo-marketing.svg";
+import brand from "~/public/text/brand";
+import img from "~/public/images/imgAPI";
+import Decoration from "./Decoration";
+import SelectLang from "../LangSwitch/Select";
+import useStyles from "./blog-style";
 
 function Copyright() {
   return (
-    <Typography variant="body2" display="block" align="center" color="textSecondary">
+    <Typography
+      variant="body2"
+      display="block"
+      align="center"
+      color="textSecondary"
+    >
       &copy;&nbsp;
       {brand.marketing.footerText}
     </Typography>
@@ -24,33 +29,46 @@ function Copyright() {
 }
 
 const footer = {
-  title: 'Quick Links',
-  description: ['Resource', 'Another resource', 'Final resource', 'Privacy policy', 'Terms of use', 'Terms Condition'],
-  link: ['#resource', '#another-resource', '#final-resource', '#privacy-policy', '#terms-of-use'],
+  title: "Quick Links",
+  description: [
+    "Resource",
+    "Another resource",
+    "Final resource",
+    "Privacy policy",
+    "Terms of use",
+    "Terms Condition",
+  ],
+  link: [
+    "#resource",
+    "#another-resource",
+    "#final-resource",
+    "#privacy-policy",
+    "#terms-of-use",
+  ],
 };
 
 const news = [
   {
-    type: 'news',
-    text: 'Sed imperdiet enim ligula vitae viverra.',
-    img: img.photo[4]
+    type: "news",
+    text: "Sed imperdiet enim ligula vitae viverra.",
+    img: img.photo[4],
   },
   {
-    type: 'news',
-    text: 'Sed imperdiet enim ligula vitae viverra.',
-    img: img.photo[1]
+    type: "news",
+    text: "Sed imperdiet enim ligula vitae viverra.",
+    img: img.photo[1],
   },
   {
-    type: 'news',
-    text: 'Sed imperdiet enim ligula vitae viverra.',
-    img: img.photo[3]
-  }
+    type: "news",
+    text: "Sed imperdiet enim ligula vitae viverra.",
+    img: img.photo[3],
+  },
 ];
 
 function Blog(props) {
   const { classes } = useStyles();
   const { toggleDir } = props;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
 
   return (
     <footer className={classes.footer}>
@@ -64,14 +82,23 @@ function Blog(props) {
                 {brand.marketing.projectName}
               </Typography>
             </div>
-            <Typography color="textPrimary" className={classes.footerDesc} gutterBottom>
-              {t('marketing-landing.banner_title')}
+            <Typography
+              color="textPrimary"
+              className={classes.footerDesc}
+              gutterBottom
+            >
+              {t("marketing-landing.banner_title")}
               .&nbsp;
-              {t('marketing-landing.banner_subtitle')}
+              {t("marketing-landing.banner_subtitle")}
             </Typography>
             <div className={classes.quickLinks}>
-              <Typography variant="h6" className={classes.title} color="textPrimary" gutterBottom>
-                {t('footer_link')}
+              <Typography
+                variant="h6"
+                className={classes.title}
+                color="textPrimary"
+                gutterBottom
+              >
+                {t("footer_link")}
               </Typography>
               <ul>
                 {footer.description.map((item, index) => (
@@ -91,31 +118,53 @@ function Blog(props) {
           </Grid>
           <Grid item xs={12} md={4}>
             {news.map((item, index) => (
-              <ButtonBase className={classes.blogItem} href="#" key={index.toString()}>
+              <ButtonBase
+                className={classes.blogItem}
+                href="#"
+                key={index.toString()}
+              >
                 <figure>
                   <img src={item.img} alt="thumb" />
                 </figure>
                 <div className={classes.listText}>
                   <Typography variant="button" className={classes.category}>
-                    {t('footer_news')}
+                    {t("footer_news")}
                   </Typography>
-                  <Typography display="block" component="p">Sed imperdiet enim ligula vitae viverra. </Typography>
+                  <Typography display="block" component="p">
+                    Sed imperdiet enim ligula vitae viverra.{" "}
+                  </Typography>
                 </div>
               </ButtonBase>
             ))}
           </Grid>
           <Grid item xs={12} md={3}>
             <div className={classes.socmed}>
-              <IconButton aria-label="FB" className={classes.margin} size="small">
+              <IconButton
+                aria-label="FB"
+                className={classes.margin}
+                size="small"
+              >
                 <i className="ion-social-twitter" />
               </IconButton>
-              <IconButton aria-label="TW" className={classes.margin} size="small">
+              <IconButton
+                aria-label="TW"
+                className={classes.margin}
+                size="small"
+              >
                 <i className="ion-social-facebook" />
               </IconButton>
-              <IconButton aria-label="IG" className={classes.margin} size="small">
+              <IconButton
+                aria-label="IG"
+                className={classes.margin}
+                size="small"
+              >
                 <i className="ion-social-instagram" />
               </IconButton>
-              <IconButton aria-label="LI" className={classes.margin} size="small">
+              <IconButton
+                aria-label="LI"
+                className={classes.margin}
+                size="small"
+              >
                 <i className="ion-social-linkedin" />
               </IconButton>
             </div>
